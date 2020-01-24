@@ -1,5 +1,6 @@
 package cc.sukazyo.sukbox;
 
+import cc.sukazyo.sukbox.fx.ControllerDesktop;
 import cc.sukazyo.sukbox.fx.ControllerWelcome;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
@@ -14,27 +15,35 @@ public class SukazyoBox extends Application {
 	
 //	private Stage welcomeStage;
 //	private AnchorPane root;
+	public static ControllerDesktop desktop;
 	
+	/**
+	 * 程序入口，调用FX运行
+	 *
+	 * @param args 入口选项，用于命令行特殊调用
+	 */
 	public static void main(String[] args) {
 		launch(args);
 	}
 	
+	/**
+	 * 窗口主程序加载
+	 * 加载 welcomeStage
+	 *
+	 * @param primaryStage 初级场景
+	 */
 	@Override
-	public void start(Stage primaryStage) throws IOException {
+	public void start(Stage primaryStage) {
+		
+		/** 初始化welcomeStage */
 		ControllerWelcome welcome = new ControllerWelcome();
 		welcome.welcomeStage = primaryStage;
 		welcome.welcomeStage.setTitle("Start");
-		
+
+		/** 加载welcomeStage */
 //		load();
 		welcome.load();
+		
 	}
 	
-//	private void load() throws IOException {
-//		FXMLLoader loader = new FXMLLoader();
-//		loader.setLocation(SukazyoBox.class.getResource("/fxml/welcome.fxml"));
-//		root = loader.load();
-//
-//		welcomeStage.setScene(new Scene(root));
-//		welcomeStage.show();
-//	}
 }

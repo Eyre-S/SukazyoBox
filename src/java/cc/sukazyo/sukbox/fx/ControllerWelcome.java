@@ -16,33 +16,36 @@ public class ControllerWelcome {
 	
 	private AnchorPane root;
 	
+	/**
+	 * welcomeStage 加载入口
+	 */
 	public void load () {
 		
-		FXMLLoader loader = new FXMLLoader();
-		loader.setLocation(SukazyoBox.class.getResource("/fxml/welcome.fxml"));
-		
-		try {
-			root = loader.load();
-		} catch (IOException e) {
-			System.out.println("[LOAD]FXML File not found!");
-			e.printStackTrace();
-		}
-		
-		
+		/** 加载welcome窗体 */
+		root = Util.getFxml("welcome.fxml");
 		welcomeStage.setScene(new Scene(root));
 		welcomeStage.initStyle(StageStyle.TRANSPARENT);
 		welcomeStage.show();
 		
 	}
 	
-	@FXML
-	private void handleConfigureButton () {
-		util.infoUndoThings("试用模式启动");
+	/**
+	 * Configure按钮执行方法
+	 */
+	@FXML private void handleConfigureButton () {
+	
+//		Util.infoUndoThings("试用模式启动");
+		/** 启动main */
+		SukazyoBox.desktop = new ControllerDesktop();
+		SukazyoBox.desktop.init();
+		
 	}
 	
-	@FXML
-	private void handleLogin () {
-		util.infoUndoThings("验证模式启动");
+	/**
+	 * Login 按钮执行方法
+	 */
+	@FXML private void handleLogin () {
+		System.exit(0);
 	}
 	
 }

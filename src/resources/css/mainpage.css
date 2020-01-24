@@ -1,3 +1,5 @@
 .root {
-
+    -fx-background-radius: 10px;
+    -fx-effect: dropshadow(three-pass-box, #aaaaaa, 10.0,0, 0, 0);
+    -fx-background-color: #ffffff;
 }
