@@ -6,6 +6,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
+import javafx.stage.StageStyle;
 
 import java.io.IOException;
 
@@ -27,9 +28,21 @@ public class ControllerWelcome {
 			e.printStackTrace();
 		}
 		
+		
 		welcomeStage.setScene(new Scene(root));
+		welcomeStage.initStyle(StageStyle.TRANSPARENT);
 		welcomeStage.show();
 		
+	}
+	
+	@FXML
+	private void handleConfigureButton () {
+		util.infoUndoThings("试用模式启动");
+	}
+	
+	@FXML
+	private void handleLogin () {
+		util.infoUndoThings("验证模式启动");
 	}
 	
 }

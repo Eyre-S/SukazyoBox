@@ -1,0 +1,15 @@
+.root {
+    -fx-font: 15px "Century Gothic";
+}
+
+.button {
+    -fx-background-color: rgb(126, 216, 223);
+    -fx-background-radius: 150;
+    -fx-transition-duration: 0.4s;
+    -fx-font: bold 15px "Century Gothic";
+    -fx-text-fill: white;
+}
+
+.button:hover {
+    -fx-background-radius: 2;
+}
