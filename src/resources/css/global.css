@@ -1,0 +1,25 @@
+.root {
+    -fx-font: 15px "Century Gothic";
+}
+
+.button {
+    -fx-background-color: rgb(126, 216, 223);
+    -fx-background-radius: 150;
+    -fx-transition-duration: 0.4s;
+    -fx-font: bold 15px "Century Gothic";
+    -fx-text-fill: white;
+    -fx-effect: dropshadow(three-pass-box, #aaaaaa, 10.0,0, 0, 0);
+}
+
+.button:hover {
+    -fx-background-radius: 2;
+}
+
+.widget-shadow {
+    -fx-effect: dropshadow(three-pass-box, #aaaaaa, 5.0,0, 0, 0);
+    -fx-background-color: #ffffff;
+}
+
+.radius {
+    -fx-background-radius: 100px;
+}
