@@ -2,6 +2,8 @@ package cc.sukazyo.sukbox.fx;
 
 import cc.sukazyo.sukbox.SukazyoBox;
 import cc.sukazyo.sukbox.util.Logout;
+import com.sun.javafx.robot.impl.FXRobotHelper;
+import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
@@ -15,14 +17,13 @@ import java.io.IOException;
 public class ControllerWelcome {
 	
 	public Stage welcomeStage;
+	private AnchorPane root;
 	
 	@FXML
 	private Button butConfigure;
 	
 	@FXML
 	private Button butDemoLogin;
-	
-	private AnchorPane root;
 	
 	/**
 	 * welcomeStage 加载入口
@@ -32,7 +33,7 @@ public class ControllerWelcome {
 	 */
 	public void load () {
 		
-		/** 加载welcome窗体 */
+		/* 加载welcome窗体 */
 		root = Util.getFxml("welcome.fxml");
 		welcomeStage.setScene(new Scene(root));
 //		welcomeStage.initStyle(StageStyle.TRANSPARENT);
@@ -48,9 +49,8 @@ public class ControllerWelcome {
 	 */
 	@FXML private void actionButtonDemoLogin () {
 		
-		Logout.info("点击 试用模式 按钮");
-//		Util.infoUndoThings("试用模式启动");
-		/** 启动main */
+		Logout.info("通过试用模式开启主面板");
+		/* 启动main */
 		SukazyoBox.desktop = new HomeDesktop();
 		SukazyoBox.desktop.show();
 		Logout.info("退出welcome面板");
@@ -62,8 +62,10 @@ public class ControllerWelcome {
 	 * Login 按钮执行方法
 	 */
 	@FXML private void actionButtonLogin () {
-		Logout.info("点击 登录 按钮");
-		Util.infoUndoThings("登陆面板");
+		Logout.info("打开登录面板");
+		ObservableList<Stage> stage = FXRobotHelper.getStages();
+		Scene scene = new Scene(Util.getFxml("login.fxml"));
+		stage.get(0).setScene(scene);
 	}
 	
 }

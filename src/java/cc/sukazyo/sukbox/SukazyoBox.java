@@ -38,12 +38,12 @@ public class SukazyoBox extends Application {
 	@Override
 	public void start(Stage primaryStage) {
 		
-		/** 初始化welcomeStage */
+		/* 初始化welcomeStage */
 		ControllerWelcome welcome = new ControllerWelcome();
 		welcome.welcomeStage = primaryStage;
 		welcome.welcomeStage.setTitle("Start");
 
-		/** 加载welcomeStage */
+		/* 加载welcomeStage */
 //		load();
 		welcome.load();
 		
