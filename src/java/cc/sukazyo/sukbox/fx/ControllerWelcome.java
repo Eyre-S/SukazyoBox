@@ -17,10 +17,10 @@ public class ControllerWelcome {
 	public Stage welcomeStage;
 	
 	@FXML
-	private Button butConfig;
+	private Button butConfigure;
 	
 	@FXML
-	private Button butLogin;
+	private Button butDemoLogin;
 	
 	private AnchorPane root;
 	
@@ -46,7 +46,7 @@ public class ControllerWelcome {
 	 * TODO 完成登陆系统
 	 *
 	 */
-	@FXML private void handleConfigureButton () {
+	@FXML private void actionButtonDemoLogin () {
 		
 		Logout.info("点击 试用模式 按钮");
 //		Util.infoUndoThings("试用模式启动");
@@ -54,14 +54,14 @@ public class ControllerWelcome {
 		SukazyoBox.desktop = new HomeDesktop();
 		SukazyoBox.desktop.show();
 		Logout.info("退出welcome面板");
-		Stage curSt = (Stage)butConfig.getScene().getWindow();
+		Stage curSt = (Stage)butDemoLogin.getScene().getWindow();
 		curSt.close();
 	}
 	
 	/**
 	 * Login 按钮执行方法
 	 */
-	@FXML private void handleLogin () {
+	@FXML private void actionButtonLogin () {
 		Logout.info("点击 登录 按钮");
 		Util.infoUndoThings("登陆面板");
 	}

@@ -1,5 +1,8 @@
 package cc.sukazyo.sukbox.fx;
 
+import cc.sukazyo.sukbox.util.Logout;
+import javafx.application.Platform;
+import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.layout.AnchorPane;
@@ -19,6 +22,12 @@ public class ControllerDesktop {
 		mainStage.initStyle(StageStyle.TRANSPARENT);
 		mainStage.show();
 		
+	}
+	
+	@FXML
+	private void actionButtonExit () {
+		Logout.info("退出应用程序");
+		Platform.exit();
 	}
 	
 }
