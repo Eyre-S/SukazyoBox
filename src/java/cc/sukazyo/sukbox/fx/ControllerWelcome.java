@@ -1,6 +1,7 @@
 package cc.sukazyo.sukbox.fx;
 
 import cc.sukazyo.sukbox.SukazyoBox;
+import cc.sukazyo.sukbox.util.Logout;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
@@ -24,7 +25,7 @@ public class ControllerWelcome {
 		/** 加载welcome窗体 */
 		root = Util.getFxml("welcome.fxml");
 		welcomeStage.setScene(new Scene(root));
-		welcomeStage.initStyle(StageStyle.TRANSPARENT);
+//		welcomeStage.initStyle(StageStyle.TRANSPARENT);
 		welcomeStage.show();
 		
 	}
@@ -33,11 +34,12 @@ public class ControllerWelcome {
 	 * Configure按钮执行方法
 	 */
 	@FXML private void handleConfigureButton () {
-	
+		
+		Logout.info("点击 试用模式 按钮");
 //		Util.infoUndoThings("试用模式启动");
 		/** 启动main */
 		SukazyoBox.desktop = new ControllerDesktop();
-		SukazyoBox.desktop.init();
+//		SukazyoBox.desktop.init();
 		
 	}
 	
@@ -45,7 +47,8 @@ public class ControllerWelcome {
 	 * Login 按钮执行方法
 	 */
 	@FXML private void handleLogin () {
-		System.exit(0);
+		Logout.info("点击 登录 按钮");
+		Util.infoUndoThings("登陆面板");
 	}
 	
 }

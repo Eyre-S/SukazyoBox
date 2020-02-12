@@ -2,6 +2,7 @@ package cc.sukazyo.sukbox;
 
 import cc.sukazyo.sukbox.fx.ControllerDesktop;
 import cc.sukazyo.sukbox.fx.ControllerWelcome;
+import cc.sukazyo.sukbox.util.Logout;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
@@ -23,6 +24,7 @@ public class SukazyoBox extends Application {
 	 * @param args 入口选项，用于命令行特殊调用
 	 */
 	public static void main(String[] args) {
+		Logout.info("系统调用，开始初始化与加载欢迎窗口");
 		launch(args);
 	}
 	

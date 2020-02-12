@@ -11,7 +11,7 @@ public class ControllerDesktop {
 	public Stage mainStage;
 	private AnchorPane root;
 	
-	public void init () {
+	public void load () {
 		
 		/** 加载fxml */
 		root = Util.getFxml("desktop.fxml");

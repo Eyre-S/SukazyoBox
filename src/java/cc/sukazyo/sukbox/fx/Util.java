@@ -1,6 +1,7 @@
 package cc.sukazyo.sukbox.fx;
 
 import cc.sukazyo.sukbox.SukazyoBox;
+import cc.sukazyo.sukbox.util.Logout;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.control.Alert;
 import javafx.scene.layout.AnchorPane;
@@ -16,6 +17,7 @@ import java.io.IOException;
 public class Util {
 	
 	public static void infoUndoThings(String thing) {
+		Logout.info("显示<" + thing + ">功能未启用");
 		Alert alert = new Alert(Alert.AlertType.INFORMATION);
 		alert.setTitle("未添加功能");
 		alert.setHeaderText(null);
@@ -37,7 +39,7 @@ public class Util {
 		loader.setLocation(SukazyoBox.class.getResource("/fxml/" + loc));
 		try {
 			AnchorPane pane = loader.load();
-			System.out.println("[INFO]Success load file.");
+			Logout.info("成功加载资源文件" + loc);
 			return pane;
 		} catch (IOException e) {
 			e.printStackTrace();
