@@ -9,6 +9,8 @@ import javafx.stage.StageStyle;
 
 public class HomeDesktop extends Application {
 	
+	Stage stage = new Stage();
+	
 	/**
 	 * 主页面单独启动入口
 	 *
@@ -16,6 +18,11 @@ public class HomeDesktop extends Application {
 	 */
 	public static void main(String[] args) {
 		launch(args);
+	}
+	
+	public void show() {
+		Logout.info("正在启动桌面面板");
+		start(stage);
 	}
 	
 	/**

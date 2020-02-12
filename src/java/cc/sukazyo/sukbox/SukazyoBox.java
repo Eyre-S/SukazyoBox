@@ -2,6 +2,7 @@ package cc.sukazyo.sukbox;
 
 import cc.sukazyo.sukbox.fx.ControllerDesktop;
 import cc.sukazyo.sukbox.fx.ControllerWelcome;
+import cc.sukazyo.sukbox.fx.HomeDesktop;
 import cc.sukazyo.sukbox.util.Logout;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
@@ -16,7 +17,7 @@ public class SukazyoBox extends Application {
 	
 //	private Stage welcomeStage;
 //	private AnchorPane root;
-	public static ControllerDesktop desktop;
+	public static HomeDesktop desktop;
 	
 	/**
 	 * 程序入口，调用FX运行

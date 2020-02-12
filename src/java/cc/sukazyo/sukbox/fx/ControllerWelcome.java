@@ -5,6 +5,7 @@ import cc.sukazyo.sukbox.util.Logout;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
+import javafx.scene.control.Button;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
@@ -15,10 +16,19 @@ public class ControllerWelcome {
 	
 	public Stage welcomeStage;
 	
+	@FXML
+	private Button butConfig;
+	
+	@FXML
+	private Button butLogin;
+	
 	private AnchorPane root;
 	
 	/**
 	 * welcomeStage 加载入口
+	 *
+	 * TODO 链接登录系统
+	 *
 	 */
 	public void load () {
 		
@@ -32,15 +42,20 @@ public class ControllerWelcome {
 	
 	/**
 	 * Configure按钮执行方法
+	 *
+	 * TODO 完成登陆系统
+	 *
 	 */
 	@FXML private void handleConfigureButton () {
 		
 		Logout.info("点击 试用模式 按钮");
 //		Util.infoUndoThings("试用模式启动");
 		/** 启动main */
-		SukazyoBox.desktop = new ControllerDesktop();
-//		SukazyoBox.desktop.init();
-		
+		SukazyoBox.desktop = new HomeDesktop();
+		SukazyoBox.desktop.show();
+		Logout.info("退出welcome面板");
+		Stage curSt = (Stage)butConfig.getScene().getWindow();
+		curSt.close();
 	}
 	
 	/**
