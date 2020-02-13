@@ -1,11 +1,9 @@
 package cc.sukazyo.sukbox.fx;
 
-import cc.sukazyo.sukbox.SukazyoBox;
 import cc.sukazyo.sukbox.util.Logout;
 import cc.sukazyo.sukbox.util.Network;
 import javafx.fxml.FXML;
 import javafx.scene.control.TextField;
-import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 
 public class ControllerLogin {
@@ -30,8 +28,7 @@ public class ControllerLogin {
 		} else if (re.equals("true")) {
 			Logout.info("密钥正确，尝试跳转页面");
 			/* 启动main */
-			SukazyoBox.desktop = new HomeDesktop();
-			SukazyoBox.desktop.show();
+			HomeDesktop.start();
 			Logout.info("退出welcome面板");
 			Stage curSt = (Stage)keyInput.getScene().getWindow();
 			curSt.close();

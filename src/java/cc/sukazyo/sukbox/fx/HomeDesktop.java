@@ -1,11 +1,9 @@
 package cc.sukazyo.sukbox.fx;
 
+import cc.sukazyo.sukbox.SukazyoBox;
 import cc.sukazyo.sukbox.util.Logout;
 import javafx.application.Application;
-import javafx.scene.Scene;
-import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
-import javafx.stage.StageStyle;
 
 public class HomeDesktop extends Application {
 	
@@ -39,5 +37,13 @@ public class HomeDesktop extends Application {
 		
 		fxml.load();
 		
+	}
+	
+	/**
+	 * 桌面启动任务
+	 */
+	public static void start() {
+		SukazyoBox.desktop = new HomeDesktop();
+		SukazyoBox.desktop.show();
 	}
 }

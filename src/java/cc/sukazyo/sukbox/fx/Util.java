@@ -6,9 +6,6 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.control.Alert;
 import javafx.scene.layout.AnchorPane;
 
-import java.io.IOError;
-import java.io.IOException;
-
 /**
  * 和界面相关的util类
  *

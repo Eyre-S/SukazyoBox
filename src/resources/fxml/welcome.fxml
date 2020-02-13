@@ -27,7 +27,7 @@
                         <Image url="@../assets/sukazyo-round.png" />
                      </image>
                   </ImageView>
-                  <Label text="Welcome Back, Sukazyo!">
+                  <Label text="欢迎回来，Sukazyo!">
                      <VBox.margin>
                         <Insets top="10.0" />
                      </VBox.margin>
@@ -36,7 +36,7 @@
             </VBox>
             <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" GridPane.rowIndex="1">
                <children>
-                  <Button fx:id="butConfigure" mnemonicParsing="false" onAction="#actionButtonLogin" prefHeight="40.0" prefWidth="240.0" text="Start User Configure">
+                  <Button fx:id="butConfigure" mnemonicParsing="false" onAction="#actionButtonLogin" prefHeight="40.0" prefWidth="240.0" text="进行Key验证">
                      <VBox.margin>
                         <Insets bottom="5.0" />
                      </VBox.margin>
@@ -44,7 +44,7 @@
                         <Insets bottom="10.0" left="15.0" right="15.0" top="10.0" />
                      </padding>
                   </Button>
-                  <Button fx:id="butDemoLogin" mnemonicParsing="false" onAction="#actionButtonDemoLogin" prefHeight="40.0" prefWidth="240.0" text="Use Demo Version">
+                  <Button fx:id="butDemoLogin" mnemonicParsing="false" onAction="#actionButtonDemoLogin" prefHeight="40.0" prefWidth="240.0" text="使用试用模式">
                      <VBox.margin>
                         <Insets top="5.0" />
                      </VBox.margin>

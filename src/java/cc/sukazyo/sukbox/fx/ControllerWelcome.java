@@ -1,18 +1,13 @@
 package cc.sukazyo.sukbox.fx;
 
-import cc.sukazyo.sukbox.SukazyoBox;
 import cc.sukazyo.sukbox.util.Logout;
 import com.sun.javafx.robot.impl.FXRobotHelper;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
-import javafx.stage.StageStyle;
-
-import java.io.IOException;
 
 public class ControllerWelcome {
 	
@@ -43,16 +38,12 @@ public class ControllerWelcome {
 	
 	/**
 	 * Configure按钮执行方法
-	 *
-	 * TODO 完成登陆系统
-	 *
 	 */
 	@FXML private void actionButtonDemoLogin () {
 		
 		Logout.info("通过试用模式开启主面板");
 		/* 启动main */
-		SukazyoBox.desktop = new HomeDesktop();
-		SukazyoBox.desktop.show();
+		HomeDesktop.start();
 		Logout.info("退出welcome面板");
 		Stage curSt = (Stage)butDemoLogin.getScene().getWindow();
 		curSt.close();
