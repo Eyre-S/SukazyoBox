@@ -27,7 +27,7 @@
                         <Image url="@../assets/sukazyo-round.png" />
                      </image>
                   </ImageView>
-                  <Label text="欢迎回来，Sukazyo!">
+                  <Label text="! Welcome !">
                      <VBox.margin>
                         <Insets top="10.0" />
                      </VBox.margin>
