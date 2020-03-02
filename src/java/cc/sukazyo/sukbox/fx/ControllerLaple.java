@@ -1,20 +1,30 @@
 package cc.sukazyo.sukbox.fx;
 
+import cc.sukazyo.sukbox.SukazyoBox;
+import cc.sukazyo.sukbox.laple.GameInfo;
+import cc.sukazyo.sukbox.laple.GameSimplePerson;
+import cc.sukazyo.sukbox.laple.GameUpdate;
 import cc.sukazyo.sukbox.util.Logout;
 import com.sun.javaws.progress.Progress;
 import javafx.application.Platform;
 import javafx.fxml.FXML;
 import javafx.scene.Scene;
+import javafx.scene.control.Button;
 import javafx.scene.control.ProgressBar;
 import javafx.scene.control.Slider;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 
+import java.util.Date;
+
 public class ControllerLaple {
 	
 	public Stage mainStage;
 	private AnchorPane root;
+	
+	// 游戏线程
+	private GameUpdate upd;
 	
 	// 进度条实体
 	@FXML private ProgressBar health;
@@ -25,6 +35,9 @@ public class ControllerLaple {
 	@FXML private ProgressBar clean;
 	@FXML private ProgressBar power;
 	@FXML private ProgressBar mood;
+	
+	// 动作实体
+	@FXML private Button btGivePoison;
 	
 	public void load () {
 		
@@ -38,6 +51,33 @@ public class ControllerLaple {
 	
 	/**
 	 *
+	 * 初始化
+	 *
+	 * @method doBind 绑定属性
+	 * @method unlock 解锁按钮可用性
+	 *
+	 */
+	private void doBind () {
+		
+		GameInfo.laple = new GameSimplePerson();
+		health.progressProperty().bind(GameInfo.laple.health);
+		temperature.valueProperty().bind(GameInfo.laple.temperature);
+		bloody.progressProperty().bind(GameInfo.laple.bloody);
+		hunger.progressProperty().bind(GameInfo.laple.hunger);
+		water.progressProperty().bind(GameInfo.laple.water);
+		clean.progressProperty().bind(GameInfo.laple.clean);
+		power.progressProperty().bind(GameInfo.laple.power);
+		mood.progressProperty().bind(GameInfo.laple.mood);
+		
+	}
+	
+	private void unlock () {
+		btGivePoison.setDisable(false);
+	}
+	
+	
+	/**
+	 *
 	 * 顶灯动作
 	 *
 	 */
@@ -46,12 +86,22 @@ public class ControllerLaple {
 	private void actionButtonExit () {
 		Logout.info("退出应用程序");
 		Platform.exit();
+		System.exit(0);
 	}
 	
 	@FXML
-	private void actionButtonAdmin () {
-		Logout.info("用户点击admin入口");
-		Util.infoUndoThings("Admin 管理面板");
+	private void actionButtonAdmin () { // 临时作为启动按钮
+//		Logout.info("用户点击admin入口");
+//		Util.infoUndoThings("Admin 管理面板");
+		
+		// 初始化属性
+		doBind();
+		unlock();
+		
+		// 打开游戏更新线程
+		upd = new GameUpdate();
+		upd.setName("GameUpdate");
+		upd.start();
 	}
 	
 	/**
@@ -60,7 +110,7 @@ public class ControllerLaple {
 	 *
 	 */
 	
-	private void stateChange () {
+	public void stateChange (String name, double value) {
 	
 	}
 	
