@@ -63,16 +63,25 @@ public class GameUpdate extends Thread {
 			// 自然体力恢复
 			upower += 10;
 			
-			// 数据计算与同步
-			health      += uhealth      * speed;
-			temperature += utemperature * speed;
-			bloody      += ubloody      * speed;
-			hunger      += uhunger      * speed;
-			water       += uwater       * speed;
-			clean       += uclean       * speed;
-			power       += upower       * speed;
-			mood        += umood        * speed;
+			// 应用更改数值
+			health      += uhealth      * speed + GameInfo.laple.uhealth     ;
+			GameInfo.laple.uhealth      = 0;
+			temperature += utemperature * speed + GameInfo.laple.utemperature;
+			GameInfo.laple.utemperature = 0;
+			bloody      += ubloody      * speed + GameInfo.laple.ubloody     ;
+			GameInfo.laple.ubloody      = 0;
+			hunger      += uhunger      * speed + GameInfo.laple.uhunger     ;
+			GameInfo.laple.uhunger      = 0;
+			water       += uwater       * speed + GameInfo.laple.uwater      ;
+			GameInfo.laple.uwater       = 0;
+			clean       += uclean       * speed + GameInfo.laple.uclean      ;
+			GameInfo.laple.uclean       = 0;
+			power       += upower       * speed + GameInfo.laple.upower      ;
+			GameInfo.laple.upower       = 0;
+			mood        += umood        * speed + GameInfo.laple.umood       ;
+			GameInfo.laple.umood        = 0;
 			
+			// 数据容错
 			health       = health      > 1 ? 1 : health      ;
 			temperature  = temperature > 40 ? 40 : temperature ;
 			bloody       = bloody      > 1 ? 1 : bloody      ;
@@ -91,6 +100,7 @@ public class GameUpdate extends Thread {
 			power       = power       < 0 ? 0 : power       ;
 			mood        = mood        < 0 ? 0 : mood        ;
 			
+			// 同步
 			GameInfo.laple.health     .set(health     );
 			GameInfo.laple.temperature.set(temperature);
 			GameInfo.laple.bloody     .set(bloody     );

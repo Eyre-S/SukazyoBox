@@ -117,8 +117,9 @@ public class ControllerLaple {
 		// 打开游戏更新线程
 		upd = new GameUpdate();
 		upd.setName("GameUpdate");
+		upd.setPriority(1);
 		upd.start();
-		Logout.info("已启动游戏Update线程");
+		Logout.info("已启动游戏Update线程，优先级为: " + upd.getPriority());
 	}
 	
 	/**
@@ -145,14 +146,8 @@ public class ControllerLaple {
 //		double now = GameInfo.laple.health.get() - 0.2;
 //		double nhunger = GameInfo.laple.hunger.get() + 0.03;
 //		double nmood = GameInfo.laple.mood.get() - 0.16;
-		double nbloody = GameInfo.laple.bloody.get() + 0.3;
-		double nt = GameInfo.laple.temperature.get() - 0.3;
-		
-//		GameInfo.laple.health.set(now<0?0:now);
-//		GameInfo.laple.hunger.set(nhunger>1?1:nhunger);
-//		GameInfo.laple.mood.set(nmood<0?0:nmood);
-		GameInfo.laple.bloody.set(nbloody);
-		GameInfo.laple.temperature.set(nt);
+		GameInfo.laple.ubloody += 0.3;
+		GameInfo.laple.utemperature -= 1;
 		
 	}
 	

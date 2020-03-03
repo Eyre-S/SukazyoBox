@@ -17,6 +17,15 @@ public class GameSimplePerson {
 	public SimpleDoubleProperty power = new SimpleDoubleProperty(1);
 	public SimpleDoubleProperty mood = new SimpleDoubleProperty(0.88);
 	
+	public volatile double uhealth      = 0;
+	public volatile double utemperature = 0;
+	public volatile double ubloody      = 0;
+	public volatile double uhunger      = 0;
+	public volatile double uwater       = 0;
+	public volatile double uclean       = 0;
+	public volatile double upower       = 0;
+	public volatile double umood        = 0;
+	
 	public double temperFormat = 36.5;
 	
 }
