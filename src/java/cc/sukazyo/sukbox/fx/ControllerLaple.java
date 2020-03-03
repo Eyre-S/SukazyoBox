@@ -41,6 +41,15 @@ public class ControllerLaple {
 	
 	public void load () {
 		
+		
+		Logout.info("======================================================");
+		Logout.info("#                                                    #");
+		Logout.info("#             Kill Lapis_Apple Start!                #");
+		Logout.info("#                                                    #");
+		Logout.info("#                              -- Game by Sukazyo    #");
+		Logout.info("#                                                    #");
+		Logout.info("======================================================");
+		
 		/** 加载fxml */
 		root = Util.getFxml("laple.fxml");
 		mainStage.setScene(new Scene(root));
@@ -95,13 +104,21 @@ public class ControllerLaple {
 //		Util.infoUndoThings("Admin 管理面板");
 		
 		// 初始化属性
+		Logout.info("执行游戏开始动作");
+		Logout.info("==============================");
+		Logout.info("");
+		Logout.info("           开始游戏");
+		Logout.info("");
+		Logout.info("==============================");
 		doBind();
 		unlock();
+		Logout.info("属性初始化完成");
 		
 		// 打开游戏更新线程
 		upd = new GameUpdate();
 		upd.setName("GameUpdate");
 		upd.start();
+		Logout.info("已启动游戏Update线程");
 	}
 	
 	/**
@@ -109,10 +126,6 @@ public class ControllerLaple {
 	 * 执行动作
 	 *
 	 */
-	
-	public void stateChange (String name, double value) {
-	
-	}
 	
 	@FXML
 	private void giveMedicine () {
@@ -129,15 +142,17 @@ public class ControllerLaple {
 	private void givePoison () {
 		Logout.info("用户执行 投毒 动作");
 		
-		double now = health.getProgress() - 0.2;
-		double nhunger = hunger.getProgress() + 0.03;
-		double nmood = mood.getProgress() - 0.16;
-		double nt = temperature.getValue() - 0.3;
+//		double now = GameInfo.laple.health.get() - 0.2;
+//		double nhunger = GameInfo.laple.hunger.get() + 0.03;
+//		double nmood = GameInfo.laple.mood.get() - 0.16;
+		double nbloody = GameInfo.laple.bloody.get() + 0.3;
+		double nt = GameInfo.laple.temperature.get() - 0.3;
 		
-		health.setProgress(now<0?0:now);
-		hunger.setProgress(nhunger>1?1:nhunger);
-		mood.setProgress(nmood<0?0:nmood);
-		temperature.setValue(nt);
+//		GameInfo.laple.health.set(now<0?0:now);
+//		GameInfo.laple.hunger.set(nhunger>1?1:nhunger);
+//		GameInfo.laple.mood.set(nmood<0?0:nmood);
+		GameInfo.laple.bloody.set(nbloody);
+		GameInfo.laple.temperature.set(nt);
 		
 	}
 	

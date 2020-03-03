@@ -17,4 +17,6 @@ public class GameSimplePerson {
 	public SimpleDoubleProperty power = new SimpleDoubleProperty(1);
 	public SimpleDoubleProperty mood = new SimpleDoubleProperty(0.88);
 	
+	public double temperFormat = 36.5;
+	
 }
