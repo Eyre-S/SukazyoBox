@@ -2,6 +2,7 @@ package cc.sukazyo.sukbox;
 
 import cc.sukazyo.sukbox.fx.ControllerWelcome;
 import cc.sukazyo.sukbox.fx.HomeDesktop;
+import cc.sukazyo.sukbox.fx.HomeLaple;
 import cc.sukazyo.sukbox.util.Logout;
 import javafx.application.Application;
 import javafx.stage.Stage;
@@ -9,6 +10,8 @@ import javafx.stage.Stage;
 public class SukazyoBox extends Application {
 	
 	public static HomeDesktop desktop;
+	
+	public static HomeLaple laple;
 	
 	/**
 	 * 程序入口，调用FX运行

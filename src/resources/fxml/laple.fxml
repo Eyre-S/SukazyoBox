@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.geometry.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane prefHeight="500.0" prefWidth="800.0" stylesheets="@../css/global.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="cc.sukazyo.sukbox.fx.ControllerLaple">
+   <children>
+      <BorderPane prefHeight="500.0" prefWidth="800.0">
+         <top>
+            <BorderPane prefHeight="60.0" prefWidth="800.0" styleClass="widget-shadow" BorderPane.alignment="CENTER">
+               <right>
+                  <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+                     <styleClass>
+                        <String fx:value="radius" />
+                        <String fx:value="widget-shadow" />
+                     </styleClass>
+                     <children>
+                        <Label layoutX="34.0" layoutY="9.0" text="Kill Lapis_Apple!">
+                           <font>
+                              <Font name="Century Gothic Bold Italic" size="17.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </AnchorPane>
+               </right>
+               <BorderPane.margin>
+                  <Insets />
+               </BorderPane.margin>
+               <padding>
+                  <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+               </padding>
+               <left>
+                  <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+                     <children>
+                        <Button mnemonicParsing="false" onAction="#actionButtonExit" prefHeight="30.0" prefWidth="30.0" style="-fx-background-color: #AA2222;" text="×">
+                           <HBox.margin>
+                              <Insets left="10.0" right="10.0" />
+                           </HBox.margin>
+                        </Button>
+                        <Button mnemonicParsing="false" onAction="#actionButtonAdmin" prefHeight="30.0" prefWidth="30.0" style="-fx-background-color: #7DB9DE;" text="₪">
+                           <HBox.margin>
+                              <Insets left="10.0" />
+                           </HBox.margin>
+                        </Button>
+                     </children>
+                  </HBox>
+               </left>
+            </BorderPane>
+         </top>
+         <center>
+            <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+               <children>
+                  <ImageView fitHeight="100.0" fitWidth="100.0" layoutX="83.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true" styleClass="widget-shadow" AnchorPane.leftAnchor="83.0" AnchorPane.topAnchor="14.0">
+                     <image>
+                        <Image url="@../assets/Lapis_Apple.jpg" />
+                     </image>
+                  </ImageView>
+                  <VBox layoutX="631.0" layoutY="13.0" prefHeight="412.0" prefWidth="168.0" AnchorPane.bottomAnchor="14.0" AnchorPane.rightAnchor="14.0" AnchorPane.topAnchor="14.0">
+                     <children>
+                        <Button fx:id="btGivePoison" disable="true" mnemonicParsing="false" onAction="#givePoison" prefHeight="30.0" prefWidth="148.0" text="投毒">
+                           <VBox.margin>
+                              <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                           </VBox.margin>
+                        </Button>
+                        <Button mnemonicParsing="false" prefHeight="30.0" prefWidth="148.0" text="喂食">
+                           <VBox.margin>
+                              <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                           </VBox.margin>
+                        </Button>
+                        <Button mnemonicParsing="false" prefHeight="30.0" prefWidth="148.0" text="Button">
+                           <VBox.margin>
+                              <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                           </VBox.margin>
+                        </Button>
+                        <Button disable="true" mnemonicParsing="false" prefHeight="30.0" prefWidth="148.0" text="Button">
+                           <VBox.margin>
+                              <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                           </VBox.margin>
+                        </Button>
+                        <Button mnemonicParsing="false" prefHeight="30.0" prefWidth="148.0" text="Button">
+                           <VBox.margin>
+                              <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                           </VBox.margin>
+                        </Button>
+                        <Button mnemonicParsing="false" prefHeight="30.0" prefWidth="148.0" text="Button">
+                           <VBox.margin>
+                              <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                           </VBox.margin>
+                        </Button>
+                        <Button mnemonicParsing="false" prefHeight="30.0" prefWidth="148.0" text="Button">
+                           <VBox.margin>
+                              <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                           </VBox.margin>
+                        </Button>
+                        <Button mnemonicParsing="false" onAction="#giveMedicine" prefHeight="30.0" prefWidth="148.0" text="喂药">
+                           <VBox.margin>
+                              <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                           </VBox.margin>
+                        </Button>
+                     </children>
+                  </VBox>
+                  <GridPane layoutX="21.0" layoutY="130.0" prefHeight="298.0" prefWidth="238.0" AnchorPane.bottomAnchor="14.0" AnchorPane.leftAnchor="14.0" AnchorPane.topAnchor="128.0">
+                    <columnConstraints>
+                      <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="95.0" minWidth="10.0" prefWidth="71.0" />
+                      <ColumnConstraints halignment="LEFT" hgrow="SOMETIMES" maxWidth="167.0" minWidth="10.0" prefWidth="167.0" />
+                    </columnConstraints>
+                    <rowConstraints>
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                    </rowConstraints>
+                     <children>
+                        <Label text="健康" />
+                        <Label text="体温" GridPane.rowIndex="1" />
+                        <Label text="失血" GridPane.rowIndex="2" />
+                        <Label text="心情" GridPane.rowIndex="7" />
+                        <Label text="体力" GridPane.rowIndex="6" />
+                        <Label text="洁净" GridPane.rowIndex="5" />
+                        <Label text="饮水" GridPane.rowIndex="4" />
+                        <Label text="饥饿" GridPane.rowIndex="3" />
+                        <ProgressBar fx:id="health" prefWidth="1000.0" progress="1.0" style="-fx-accent: #FEDFE1;" GridPane.columnIndex="1" />
+                        <ProgressBar fx:id="bloody" nodeOrientation="RIGHT_TO_LEFT" prefWidth="1000.0" progress="0.0" style="-fx-accent: #D0104C;" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                        <ProgressBar fx:id="hunger" nodeOrientation="LEFT_TO_RIGHT" prefWidth="1000.0" progress="0.6" style="-fx-accent: #FBE251;" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                        <ProgressBar fx:id="water" prefWidth="1000.0" progress="0.9" style="-fx-accent: #66F4FF;" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                        <ProgressBar fx:id="clean" prefWidth="1000.0" progress="0.75" style="-fx-accent: #3DF33D;" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+                        <ProgressBar fx:id="power" prefWidth="1000.0" progress="1.0" style="-fx-accent: #1C1C1C;" GridPane.columnIndex="1" GridPane.rowIndex="6" />
+                        <ProgressBar fx:id="mood" prefWidth="1000.0" progress="0.88" style="-fx-accent: #1CEED2;" GridPane.columnIndex="1" GridPane.rowIndex="7" />
+                        <Slider fx:id="temperature" cacheHint="SCALE_AND_ROTATE" cacheShape="false" centerShape="false" focusTraversable="false" majorTickUnit="1.0" max="40.0" min="35.0" minorTickCount="4" mouseTransparent="true" nodeOrientation="LEFT_TO_RIGHT" scaleShape="false" showTickLabels="true" showTickMarks="true" snapToTicks="true" value="36.5" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                           <cursor>
+                              <Cursor fx:constant="DEFAULT" />
+                           </cursor>
+                        </Slider>
+                     </children>
+                  </GridPane>
+               </children></AnchorPane>
+         </center>
+      </BorderPane>
+   </children>
+</AnchorPane>
