@@ -24,7 +24,7 @@ public class Util {
 		Alert alert = new Alert(Alert.AlertType.INFORMATION);
 		alert.setTitle("未添加功能");
 		alert.setHeaderText(null);
-		alert.setContentText("功能<" + thing + ">暂未添加，请耐心等待");
+		alert.setContentText("<" + thing + "> 还没做哦");
 		alert.showAndWait();
 	}
 	
